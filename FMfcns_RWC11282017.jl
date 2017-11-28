@@ -145,12 +145,14 @@ function calc_rake(normal, slip)
     end
 
 
-    if sign(normal) != sign(slip)
-        rake = -rake
-    end
+    if normal[3] == 0
+        if sign(normal) != sign(slip)
+            rake = -rake
+        end
 
-    if sign(slip) == [-1.0;-1.0;0.0]
-        rake = -rake
+        if sign(slip) == [-1.0;-1.0;0.0]
+            rake = -rake
+        end
     end
     return rake
 end
