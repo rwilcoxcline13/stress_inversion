@@ -145,7 +145,7 @@ function calc_rake(normal, slip)
     end
 
 
-    if sign(normal) == [-1.0;-1.0;0.0]
+    if sign(normal) != sign(slip)
         rake = -rake
     end
 
